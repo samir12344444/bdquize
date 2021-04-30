@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title></title>
+  </head>
+  <body>
+    <div class = "div">
+      <h2>Quize Master API</h2>
+    
+     
+      <span class = "w">00:25</span>
+    <p>Score : <span class = "man" value = "0">0</span></p>
+      
+     
+        <h3 class = "ho">What does html stand?</h3>
+      <button onclick = "ch(this)" value = "1"><p class = "btn">1.Hyper Test Makeup Length</p></button>
+      <button onclick = "ch(this)" value = "2"><p class = "btn1">2.Hyper Text Markup Language</p></button>
+      <button onclick = "ch(this)" value = "3"><p class = "btn2">3.Hyper Tron Madeup Lenght</p></button>
+      <button onclick = "ch(this)" value = "4"><p class = "btn3">4.Hyper Text Makeup Length</p></button>
+       <button class = "mo" onclick = "php()">Next</button>
+       <button class = "kmo" onclick = "km()">Show answer</button>
+      
+       <h2 id="mantb">Welcome</h2>
+        
+      
+            
+           
+                   
+    
+    </div>
+    
+    <style>
+      body{
+        background-color: #4dffff;
+        position:relative;
+       
+      }
+       div{ 
+         width:100%;
+         height:750px;
+         margin-top:70px;
+         background-color: white;
+         position:abs;
+       
+         
+       }
+           
+           .div h2{
+             padding:10px;
+             text-align: center;
+             font-family: times new roman;
+             font-weight: bold;
+             border-bottom:3px solid orange;
+             font-size: 25px;
+           }
+                  
+                  .div {
+                    text-align: right;
+                  
+                  }
+                 
+                 
+                        
+                        .div span{
+                          margin-right:10px;
+                          padding-right:20px;
+                          font-family:times new roman;
+                          font-weight:bold;
+                          border:2px solid red;
+                          border-radius:20px;
+                          padding-left: 20px;
+                        }
+                           
+                           .div h3{  
+      text-align:left;
+      margin-left:10px;
+      font-family: times new roman;
+      
+  
+                           }
+                        
+                            
+                            .div p{
+        text-align:left;
+        margin-left:10px;
+        font-family: times new roman;
+                            }
+                             
+                             
+                             
+                             .div  button{
+      
+       width:80%;
+       margin-left:20px;
+         margin-right:300px;
+         background-color:orange;
+         border-radius:50px;
+         color:white;
+         border:none;
+        margin-bottom: 20px;
+                             }
+                        
+                             
+                            
+                          
+                             .div button.kmo{
+                               margin-top:10px;
+                         height:50px;
+                         background-color:#3399ff;
+                         font-family:times new roman;
+                         font-weight:bold;
+                             }
+                             
+                              
+                              .div button.mo{
+                                margin-top:30px;
+                             height:50px;
+                             background-color: #4dff4d;
+                             font-family: times new roman;
+                             font-weight:bold;
+                              }
+                                
+            
+    </style>
+    <script>
+    
+    var nb = prompt("Enter your name ");
+    
+      function hi(){
+        window.location="B.html"
+      }
+  var timer = 25;
+var min = 0;
+var sec = 0;
+var count = 0;
+var ti =
+setInterval(function (){
+    count++;
+    min = Math.floor((timer-count)/60);
+    
+sec = timer - min * 60 - count;
+
+var man = document.querySelector(".w");
+man.innerHTML = "0"+min + ":"+sec;
+if(timer == count ){
+    clearInterval(ti);
+    alert(" Time is over. Press ok");
+    km();
+    }
+},1000);
+var quize = [{
+Question:"What does html stand?",
+option:[
+"1.Hyper Test Makeup Length",
+"2.Hyper Text Markup Language",
+"3.Hyper Tron Madeup Lenght",
+"4.Hyper Text Makeup Length",
+],
+answer:2,},
+{
+ Question:"What does css stand?",
+option:[
+"1.Casacading Style sheets",
+"2.Casam Style sridge",
+"3.Casacifing Style sridge",
+"4.CasaNaking Style sang",
+],
+answer:1,
+},
+{
+  Question:"What does php stand?",
+option:[
+"1.Hypertext Preprocessor",
+"2.Plan hex Language",
+"3.Pi Hense Lang",
+"4.Java Scrpt",
+],
+answer:1,
+},
+{
+  Question:"What does js stand?" , 
+  option:[
+ "1.Java suspt",
+ "2.Java Swith",
+ "3.Java Script",
+ "4.Java sript",
+    
+    
+    ],
+answer:3,
+},
+{
+Question:"Which is correct html tag?" , 
+  option:[
+ "1.k",
+ "2.gh",
+ "3.div",
+ "4.drim",
+    
+    
+    ],
+answer:3,
+
+  
+
+}
+
+
+];
+var next = 0;
+function php(){
+  next++;
+ var name = document.querySelector(".ho");
+  name.innerHTML="<h3>"+quize[next].Question + "</h3>";
+  
+  var k = document.querySelector(".btn");
+  k.innerHTML=quize[next].option[0];
+  var p = document.querySelector(".btn1");
+  p.innerHTML=quize[next].option[1];
+  var s = document.querySelector(".btn2");
+  s.innerHTML=quize[next].option[2];
+  var h = document.querySelector(".btn3");
+  h.innerHTML=quize[next].option[3];
+  
+  if(next == 4){
+      km();
+      var ng = document.querySelector(".mo");
+      ng.remove();
+      var kh = document.querySelector(".kmo");
+  kh.remove();
+   
+  }
+   
+}
+write = 0;
+wrong = 0;
+function ch(pram){
+ 
+  var nam = pram.value;
+  
+  if(nam == quize[next].answer){
+    alert("Write Answer    you have gain 10 points click on next");
+    write = write + 10;
+    alert(write);
+    
+  }
+  else{
+    alert("Wrong Answer.you have gain 0 points click on next");
+    wrong = wrong + 10;
+  }
+  var name = document.querySelector(".man");
+  name.innerHTML = write;
+}
+function km(){
+ 
+    var nana = document.querySelector(".ho");
+  nana.innerHTML="<h3>"+"Here is your result of your quize"  +"</h3>";
+  var kam = document.querySelector(".btn");
+  kam.innerHTML = "Total Quize is 5 ";
+  var am = document.querySelector(".btn1");
+  am.innerHTML = "Your write answer is " + write/10;
+  var mak = document.querySelector(".btn2");
+  mak.innerHTML = "Your wrong answer is " + wrong/10;
+  var mal = document.querySelector(".btn3");
+  mal.innerHTML = "Your total point is " + write ;
+  clearInterval(ti);
+  
+  
+ 
+}
+
+var m = document.querySelector("#mantb");
+m.innerHTML = " Welcome to "+nb;
+
+
+
+       </script>
+    </script>
+  </body>
+</html>
